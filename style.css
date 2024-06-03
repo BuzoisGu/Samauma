@@ -1,0 +1,1221 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+:root {
+    --dark-blue: #030D18;
+    --verde-escuro: #090e01;
+    --verde2: #172107;
+    --verde3: #30460b;
+    --verde4: #507507;
+    --verde-claro: #79ae0f;
+    --blue1: #010e0b;
+    --blue2: #007c54;
+    --dark-green: #0d6f5c;
+    --light-text: #d6f97b;
+    --texto-ativo: #d2f9e5;
+
+    --small-text: 1.4vw;
+    --medium-text: 2.6vw;
+    --large-text: 6vw;
+
+    --preenchimento: 26px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow: hidden;
+    background: var(--dark-blue);
+}
+
+* ::-webkit-scrollbar {
+    width: 3px;
+}
+
+* ::-webkit-scrollbar-track {
+    background: --verde-escuro;
+}
+
+* ::-webkit-scrollbar-thumb {
+    background: var(--verde-claro);
+    border-radius: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Header Começo */
+header {
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+header nav {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+header ul {
+    width: 25vw;
+    height: 8vh;
+    padding: 16px;
+    position: absolute;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--verde-claro);
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    text-decoration: none;
+    padding: 6px;
+    color: var(--light-text);
+    border-radius: 20px;
+    font-size: 1.25vw;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+header ul li a:hover,
+header ul li a.active {
+    color: var(--texto-ativo);
+}
+
+.menu {
+    float: right;
+    line-height: 50px;
+    font-size: var(--medium-text);
+    cursor: pointer;
+    display: none;
+}
+
+/* Header Fim */
+
+/* Section Começo */
+section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 2;
+    scroll-snap-align: start;
+}
+
+#section-comeco::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, var(--verde-escuro), transparent);
+    z-index: 1000;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#frente_direita {
+    z-index: 10;
+}
+
+section img#frente_esquerda {
+    z-index: 10;
+    margin-left: -3px;
+}
+
+#samauma {
+    position: absolute;
+    color: var(--light-text);
+    ;
+    white-space: nowrap;
+    font-size: var(--large-text);
+    z-index: 8;
+    cursor: default;
+}
+
+#btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: var(--light-text);
+    color: var(--verde-escuro);
+    font-size: var(--medium-text);
+    z-index: 8;
+    transform: translateY(100px);
+    cursor: pointer;
+}
+
+/* Section End */
+
+/* Container Start */
+.container {
+    border-radius: 6px;
+    width: 400px;
+    height: 400px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+}
+
+.painel {
+    max-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+#titulo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: none;
+    font-size: 2vw;
+    color: var(--verde-claro);
+}
+
+#descricao {
+    width: 100%;
+    height: 100%;
+    padding: var(--preenchimento);
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+#imagens-jogo {
+    width: 80%;
+    background-size: cover;
+    align-items: center;
+    padding: var(--preenchimento);
+    background: none;
+}
+
+.background-samauma {
+    width: 100vw;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.logo-samauma {
+    position: relative;
+    width: 50vw;
+    height: 50%;
+    background-image: url(imagens/logogrande.png);
+    background-size: 50vw;
+    background-repeat: no-repeat;
+    display: grid;
+    top: -100px;
+    opacity: 0;
+}
+
+.logo-pequena {
+    width: 40vw;
+    height: 90%;
+    border-radius: 30px;
+    background-color: #fff;
+    background-image: url(imagens/logopequena.svg);
+    background-size: 25vw;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.introducao {
+    position: relative;
+    width: 60vw;
+    height: 40%;
+    font-size: 2vw;
+    font-weight: 600;
+    color: #2C400E;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    top: 100px;
+}
+
+#texto {
+    width: 50%;
+    height: 50%;
+    font-size: 1.4vw;
+    color: #fff;
+    text-align: justify;
+}
+
+#dados {
+    width: 100%;
+    height: 100%;
+    max-height: 550px;
+    padding: var(--preenchimento);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+#dados::-webkit-scrollbar {
+    width: 4px;
+}
+
+#dados::-webkit-scrollbar-track {
+    background: #0e3e6c;
+    border-radius: 12px;
+}
+
+#dados::-webkit-scrollbar-thumb {
+    background: #118ae6;
+    border-radius: 12px;
+}
+
+
+.topicos {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    scale: 0.8;
+}
+
+.topico {
+    text-align: center;
+    font-size: 2vw;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.card-info {
+    width: 70%;
+    height: 100%;
+    font-size: var(--small-text);
+    border-radius: 20px;
+    text-align: justify;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.conteudo-principais {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 60px;
+    color: #fff;
+    text-align: justify;
+    justify-content: space-between;
+}
+
+.animais-principais {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    z-index: 10;
+}
+
+#onca-pintada {
+    background-image: url(imagens/animais_principais/onca_pintada.jpg);
+    z-index: 11;
+}
+
+#lobo-guara {
+    background-image: url(imagens/animais_principais/lobo-guara.jpg);
+}
+
+#capivara {
+    background-image: url(imagens/animais_principais/capivara.jpg);
+}
+
+#arara-azul {
+    background-image: url(imagens/animais_principais/arara_azul.jpg);
+}
+
+#anta {
+    background-image: url(imagens/animais_principais/anta.jpg);
+}
+
+#boto {
+    background-image: url(imagens/animais_principais/boto.jpg);
+}
+
+#macaco {
+    background-image: url(imagens/animais_principais/macaco_prego.jpg);
+}
+
+#tucano {
+    background-image: url(imagens/animais_principais/tucano.jpg);
+}
+
+.divisor {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-principais {
+    position: relative;
+    width: 100%;
+    height: auto;
+    font-size: 4vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#animal-nome {
+    position: relative;
+    width: 80%;
+    height: auto;
+    font-size: 3vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+}
+
+#seta-esquerda, #seta-direita {
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#seta-esquerda:hover, #seta-direita:hover {
+    scale: 1.2;
+}
+
+#texto-principais {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: #010e0b;
+    padding: 14px;
+    border-radius: 20px;
+    font-size: 1.6vw;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+#foto-menor {
+    background: #fff;
+    width: 40%;
+    height: 70%;
+    border-radius: 30px;
+    background-image: url(imagens/animais_principais/onca_pintada_vertical.jpg);
+    background-size: cover;
+}
+
+.setas {
+    width: 50vw;
+    height: auto;
+    font-size: 3vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.subtitulo {
+    display: none;
+    width: 100%;
+    height: auto;
+    font-size: var(--medium-text);
+    text-align: center;
+    transition: 0.3;
+}
+
+.informacoes {
+    display: none;
+    height: auto;
+    font-size: var(--small-text);
+}
+
+.imagem-preservacao {
+    width: 40%;
+    background-size: cover;
+}
+
+#equipe {
+    width: 70%;
+    height: 90%;
+    background-image: url(imagens/integrantes/equipe.png);
+    background-size: 110%;
+    background-repeat: no-repeat;
+    display: grid;
+    justify-content: center;
+    font-size: var(--medium-text);
+    color: #fff;
+    z-index: 1;
+    scale: 0.8;
+}
+
+.equipe-descricao {
+    backdrop-filter: blur(6px);
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    font-size: 1.5vw;
+    padding: 60px;
+}
+
+.revelar-texto {
+    width: 5%;
+    height: 10%;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    transform: translate(12px, 12px);
+}
+
+#olho {
+    cursor: pointer;
+}
+
+#integrantes {
+    width: 70%;
+    height: 90%;
+    padding: var(--preenchimento);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    contain: content;
+    border: solid #030D18;
+
+}
+
+.animais-side {
+    width: 8%;
+    height: 100%;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: repeat(1);
+    align-items: center;
+    justify-content: center;
+    color: #030D18;
+    scale: 0.8;
+}
+
+.perfil {
+    width: auto;
+    height: auto;
+    border-radius: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    scale: .8;
+    background-size: cover;
+}
+
+.info {
+    width: 35vw;
+    height: 100%;
+    border-radius: 16px;
+    font-size: var(--medium-text);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nome-container {
+    position: relative;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nome {
+    width: auto;
+    height: 40px;
+    padding: 12px;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    font-size: var(--medium-text);
+    font-weight: 600;
+}
+
+.funcoes {
+    width: 100%;
+    height: 80%;
+    padding: var(--preenchimento);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: var(--small-text);
+    text-align: left;
+    scale: 0.8;
+}
+
+#danilo,
+#guilherme,
+#gustavo,
+#marcela,
+#murillo,
+#thais {
+    position: relative;
+    font-size: var(--small-text);
+    cursor: pointer;
+    transition: 0.4s;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    color: #030D18;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-position-x: center;
+    background-position: center;
+}
+
+#redes-sociais {
+    display: flex;
+    letter-spacing: 12px;
+}
+
+#icon-instagram {
+    width: auto;
+    height: auto;
+    color: #fff;
+    font-size: 35px;
+    transition: 0.3s;
+}
+
+#icon-instagram:hover {
+    scale: 1.2;
+    color: #5eb4f5;
+}
+
+#contato {
+    width: 90%;
+    height: 100%;
+    border-top: solid white 3px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    border-radius: 0;
+    background: none;
+}
+
+.contate {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.container-contato {
+    width: 200px;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    justify-self: flex-start;
+    flex-wrap: wrap;
+}
+
+.icons {
+    height: 20%;
+    text-align: center;
+    font-size: 1.4vw;
+}
+
+.icons a {
+    color: #056bc4;
+}
+
+#email,
+#instagram {
+    background: #fff;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--medium-text);
+    color: #030D18;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#email:hover,
+#instagram:hover {
+    scale: 1.1;
+}
+
+.section-wrapper {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.banner-wrapper {
+    width: 30%;
+    height: 100%;
+} 
+
+.sinopse-wrapper {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.4vw;
+    color: #fff;
+    scale: 0.8;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    background-image: url(imagens/banner/bannerVertical.png);
+    background-size: 25vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    scale: 0.8;
+}
+
+.sinopse {
+    width: 100%;
+    height: 70%;
+    background: var(--verde-claro);
+    padding: var(--preenchimento);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.botao-download {
+    width: 90%;
+    height: 10vh;
+    border-radius: 30px;
+    align-content: center;
+    text-align: center;
+    background: var(--verde-claro);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: var(--small-text);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.download-texto {
+    width: auto;
+    height: auto;
+}
+
+.video-jogo {
+    width: 70%;
+    height: 90%;
+    background: #fff;
+    background-size: cover;
+    display: flex;
+    scale: 0.8;
+}
+
+.imagem-jogo {
+    width: 70%;
+    height: 90%;
+    background: #ccc;
+    background-size: cover;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    scale: 0.8;
+}
+
+.fotos-preview {
+    width: 80%;
+    height: 25%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 12px;
+    gap: 12px;
+    contain: content;
+}
+
+.imagem {
+    background-size: cover;
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.imagem-active {
+    background-size: cover;
+    filter: none;
+    cursor: pointer;
+    scale: 1.05;
+    transition: .3s;
+}
+
+.imagem:hover {
+    scale: 1.05;
+    filter: none;
+}
+
+.footer {
+    height: 40vh;
+    padding: 30px;
+    color: #fff;
+    font-size: var(--small-text);
+    font-weight: 600;
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--verde-escuro);
+}
+
+.softwares {
+    width: 90%;
+    height: 100%;
+    border-top: solid white 3px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+.logos {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.logo-wrapper {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 80%;
+    height: 80%;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Container End */
+
+/* Sec Start */
+.sec {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    contain: content;
+}
+
+#primeiraSec {
+    background-color: var(--verde-escuro);
+}
+
+#segundaSec {
+    background-color: var(--verde2);
+}
+
+#terceiraSec {
+    background-color: var(--verde3);
+}
+
+.circulo {
+    width: 100px;
+    height: 100px;
+    background-color: #056bc4;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.a {
+    width: 150px;
+    height: 150px;
+    left: 2vw;
+    top: 2vh;
+    background: #2C400E;
+}
+
+.b {
+    background: #76AA27;
+    top: 80vh;
+    left: 10vw;
+}
+
+.c {
+    background: #76AA27;
+    top: 2vh;
+    left: 80vw;
+}
+
+.d {
+    width: 150px;
+    height: 150px;
+    background: #2C400E;
+    top: 70vh;
+    left: 80vw;
+}
+
+.e {
+    width: 120px;
+    height: 120px;
+    background: #2C400E;
+    top: 10vh;
+    left: 60vw;
+}
+
+.f {
+    background: #76AA27;
+    top: 80vh;
+    left: 30vw;
+}
+
+#secDarkBlue {
+    background: var(--verde2);
+}
+
+#secLightBlue {
+    background: var(--verde3);
+}
+/* Sec End */
+
+.profile {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    flex: 1;
+    position: absolute;
+}
+
+@media screen and (width <=767px) {
+    * {
+        box-sizing: border-box;
+        cursor: default;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    header {
+        position: fixed;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    header ul {
+        width: 80vw;
+        height: 4vh;
+        border-radius: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        gap: 6vw;
+    }
+
+    header ul li a {
+        font-size: 3.5vw;
+    }
+
+    .sec {
+        padding: 30px;
+    }
+
+    .section-wrapper {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        contain: layout;
+    }
+
+    #samauma {
+        font-size: 12vw;
+    }
+
+    #btn {
+        font-size: 6vw;
+    }
+
+    .background-samauma {
+        align-items: center;
+    }
+
+    .logo-samauma {
+        top: 0;
+        width: 100vw;
+        height: 120px;
+        background-size: cover;
+    }
+
+    .introducao {
+        font-size: 5vw;
+        text-align: justify;
+    }
+
+    .c, .d {
+        display: none;
+    }
+
+    #texto {
+        width: 70vw;
+        height: 60%;
+        font-size: 3vw;
+    }
+
+    #titulo {
+        display: none;
+    }
+
+    .logo-pequena {
+        width: 70vw;
+        height: 30vh;
+        background-size: contain;
+    }
+
+    .topicos, .topico{
+        height: auto;
+        justify-content: space-between;
+        font-size: 3.3vw;
+    }
+
+    #descricao {
+        position: relative;
+        width: 100vw;
+        height: auto;
+
+    }
+
+    .card-info {
+        width: 100%;
+        font-size: 3vw;
+    }
+
+    .animais-principais {
+        height: 30vh;
+    }
+
+    .conteudo-principais {
+        padding: 0;
+        align-items: center;
+    }
+
+    .divisor {
+        height: 30vw;
+    }
+
+    #secPrincipais {
+        background-color: #507507;
+    }
+
+    #equipe {
+        width: 100vw;
+        height: 30vh;
+        font-size: 6vw;
+    }
+
+    .equipe-descricao {
+        height: 30vh;
+        padding: 30px;
+        font-size: 2.2vw;
+    }
+
+    #integrantes {
+        width: 100vw;
+        height: 60vh;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 0;
+        border: none;
+        contain: layout;
+        position: relative;
+        top: -40px;
+    }
+
+    .animais-side {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .perfil {
+        width: auto;
+        height: auto;
+        position: relative;
+    }
+
+    .foto {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .nome {
+        font-size: 7vw;
+    }
+
+    .funcoes {
+        position: relative;
+        height: auto;
+        font-size: 4vw;
+        top: -50px;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .banner-wrapper {
+        width: 100%;
+        height: 30%;
+    }
+
+    .banner {
+        background-size: 35vw;
+    }
+
+    .sinopse-wrapper {
+        width: 100%;
+        height: auto;
+    }
+
+    .sinopse-wrapper p {
+        font-size: 3.9vw;
+    }
+
+    .versao-samauma {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 7vh;
+        width: 100%;
+    }
+
+    .botao-download {
+        height: 7vh;
+        font-size: 4.5vw;
+    }
+
+    .video-jogo {
+        width: 100%;
+        height: 30%;
+    }
+
+    .imagem-jogo {
+        width: 100%;
+        height: 40%;
+    }
+
+    .footer {
+        height: 30vh;
+        font-size: 3.5vw;
+    }
+
+    .container-contato {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    #email, #instagram {
+        width: 10vw;
+        height: 10vw;
+        font-size: 7vw;
+    }
+
+    .icons {
+        font-size: 4vw;
+    }
+
+    .softwares {
+        width: 100%;
+    }
+
+    .logos {
+        width: 100%;
+    }
+
+    .logo-wrapper {
+        width: 35%;
+    }
+
+    #logo-aseprite {
+        background-size: 80%;
+    }
+
+    #logo-unity {
+        background-size: 100%;
+    }
+
+    #logo-pixelstudio {
+        background-size: 70%;
+    }
+
+
+
+}
